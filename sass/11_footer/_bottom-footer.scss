@@ -1,0 +1,17 @@
+.site-info {
+	background:$secondary;
+	.copyright {
+		padding: 12px 0px;
+		color:$white;
+		text-align:center;
+		p {
+			margin-bottom:0px;
+			a {
+				color:$primary;
+				&:hover {
+					color:$white;
+				}
+			}
+		}
+	}
+}
