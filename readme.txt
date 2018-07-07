@@ -1,9 +1,9 @@
 === Picolog ===
 Contributors: Webulous
-Tags: photography, blog, news, custom-menu, custom-background, custom-header, custom-logo, featured-images, right-sidebar, sticky-post, threaded-comments, translation-ready, two-columns, one-column, footer-widgets, full-width-template, translation-ready, theme-options, rtl-language-support
+Tags: photography, blog, news, custom-menu, custom-background, custom-header, custom-logo, featured-images, right-sidebar, sticky-post, threaded-comments, translation-ready, two-columns, one-column, footer-widgets, full-width-template, theme-options, rtl-language-support
 Requires at least: 4.2
-Tested up to: 4.8.1
-Stable tag: 1.0.0
+Tested up to: 4.9.6
+Stable tag: 1.0.2
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -46,20 +46,29 @@ Enable/Disable featured images visibility.
 
 == Changelog ==
 
-= 1.0.0 =
+= 1.0.2 =
+ * Added site Creation Ads in Theme Upgrade Page.
+ * Scroll to Top option added.
+ * WPForms Lite plugin recommended.
+
+= 1.0.1 =
 * Initial Release
 
 == Upgrade Notice ==
 
-= 1.0.0 =
-* Initial Release
+= 1.0.2 =
+ * Added site Creation Ads in Theme Upgrade Page.
+ * Scroll to Top option added.
+ * WPForms Lite plugin recommended.
 
 Picolog WordPress Theme bundles the following third-party resources:
 == Resources ==
 * {_s}, GPLv3, http://underscores.me/
 * {Skeleton}, MIT, https://github.com/dhg/Skeleton#license
-* {Flexslider} © 2015 Woo Themes, GPLv2 ,https://github.com/woothemes/FlexSlider
+* {Flexslider} © 2015 Woo Themes, GPLv2 ,https://github.com/woothemes/FlexSlider* {FontAwesome Icon Picker} © Licensed under the MIT License, https://github.com/mjolnic/fontawesome-iconpicker/blob/master/LICENSE
 * {FontAwesome} © Dave Gandy, SIL OFL 1.1 and MIT ,https://fortawesome.github.io/Font-Awesome
+* {TGM Plugin Activation} library is licensed under the GPL-2.0, https://github.com/TGMPA/TGM-Plugin-Activation/
+
 * Screenshot Images is licensed under CC0 Public Domain License.(http://pixabay.com/en/service/terms/)
 	https://pixabay.com/en/photographer-snowstorm-snow-winter-562309/
 	https://pixabay.com/en/old-camera-lens-toys-hobbies-2237968/
@@ -68,4 +77,4 @@ Picolog WordPress Theme bundles the following third-party resources:
 	https://pixabay.com/en/ice-frozen-water-glowing-glacier-2567399/ 
 	https://pixabay.com/en/currant-grade-glass-red-black-1560383/
 	https://pixabay.com/en/lemon-lemon-under-water-lemonade-2539163/
-* Except above All Images inside the images folder are created by own. Those Image are licensed under CC0 Public Domain License GPLv3.
+* Except above All Images inside the images folder are created by own. Those Image are licensed under CC0 Public Domain.

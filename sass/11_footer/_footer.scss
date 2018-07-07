@@ -46,7 +46,6 @@
 				color: $white;
 			}
 			 a {
-				color: $white;
 				&:hover {
 					color: $primary;
 				}
@@ -127,6 +126,27 @@
 			background: none;
 		}
 
+	}
+	.scroll-to-top {
+		background: $primary;
+		color: $white;
+		bottom: 10%;
+		cursor: pointer;
+		//display: none;
+		position: fixed;
+		right: 20px;
+		z-index: 999;
+		text-align: center;
+		line-height: 40px;
+		width: 40px;
+		@include border-radius(4px);
+		-webkit-transition: background-color 0.3s linear;
+		-moz-transition: background-color 0.3s linear;
+		-o-transition: background-color 0.3s linear;
+		transition: background-color 0.3s linear;
+	}
+	.scroll-to-top:hover {
+		background: rgba($primary, 0.8);
 	}
 }
 

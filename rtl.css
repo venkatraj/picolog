@@ -1118,14 +1118,14 @@ a.more-link {
   right: 260px; }
 
 #showLeftPush {
-  background: #ffffff none repeat scroll 100% 0;
+  background: #ff7e20 none repeat scroll 100% 0;
   color: #000000; }
 
 #showLeftPush {
-  background: #ffffff none repeat scroll 100% 0;
+  background: #ff7e20 none repeat scroll 100% 0;
   border-radius: 30px;
   box-shadow: -1px 0 2px rgba(0, 0, 0, 0.1);
-  color: #000000;
+  color: #ffffff;
   cursor: pointer;
   display: block;
   font-size: 18px;
@@ -1461,13 +1461,13 @@ object {
     margin: 0 0px 0px 8px;
     display: inline-block; }
     .share-box ul li a {
-      width: 30px;
-      height: 30px;
+      width: 35px;
+      height: 35px;
       color: #242424;
       display: inline-block;
       background-color: #242424;
       text-align: center;
-      line-height: 30px;
+      line-height: 35px;
       -webkit-transform: rotate(-45deg);
               transform: rotate(-45deg);
       color: #fff; }
@@ -1478,8 +1478,7 @@ object {
         -webkit-transform: rotate(45deg);
                 transform: rotate(45deg);
         font-size: 14px;
-        font-size: 1.4rem;
-        line-height: 2; }
+        font-size: 1.4rem; }
 
 .share-box {
   margin-bottom: 50px; }
@@ -1855,47 +1854,6 @@ blockquote, q {
       color: #ff7e20; }
   .single-post #primary .tag-footer .tag-title {
     color: #ff7e20; }
-
-
-.search article .entry-meta {
-  text-transform: uppercase; }
-  .search article .entry-meta span {
-    position: relative; }
-    .search article .entry-meta span:after {
-      position: absolute;
-      content: "-";
-      font-size: 17px;
-      top: auto;
-      right: auto; }
-    .search article .entry-meta span a {
-      color: #242424;
-      font-size: 14px;
-      padding: 0px 20px 0px 10px; }
-      .search article .entry-meta span a:hover {
-        color: #ff7e20; }
-    .search article .entry-meta span:last-child:after {
-      display: none; }
-  .search article .entry-meta .author a {
-    padding-right: 0px; }
-
-.search article .entry-date {
-  border: 2px solid #ff7e20;
-  float: right;
-  text-align: center;
-  width: 15%; }
-  .search article .entry-date .date-structure {
-    display: inline-block;
-    padding: 5px 0px;
-    color: #ff7e20;
-    line-height: 1; }
-    .search article .entry-date .date-structure h2 {
-      font-size: 54px;
-      color: #ff7e20;
-      margin-bottom: 0px; }
-    .search article .entry-date .date-structure span {
-      display: block;
-      font-size: 16px;
-      font-weight: bold; }
 
 .home .site-content {
   padding-top: 0; }
@@ -2904,10 +2862,8 @@ blockquote, q {
       border-color: rgba(255, 255, 255, 0.2); }
     .site-footer .footer-widgets .calendar_wrap td, .site-footer .footer-widgets .calendar_wrap th {
       color: #fff; }
-    .site-footer .footer-widgets .calendar_wrap a {
-      color: #fff; }
-      .site-footer .footer-widgets .calendar_wrap a:hover {
-        color: #ff7e20; }
+    .site-footer .footer-widgets .calendar_wrap a:hover {
+      color: #ff7e20; }
     .site-footer .footer-widgets .calendar_wrap tbody tr:nth-child(odd) th {
       background-color: #242424;
       color: #fff; }
@@ -2948,6 +2904,23 @@ blockquote, q {
       color: #fff; }
     .site-footer .footer-widgets .widget_rss ul li {
       background: none; }
+  .site-footer .scroll-to-top {
+    background: #ff7e20;
+    color: #fff;
+    bottom: 10%;
+    cursor: pointer;
+    position: fixed;
+    left: 20px;
+    z-index: 999;
+    text-align: center;
+    line-height: 40px;
+    width: 40px;
+    background-clip: padding-box;
+    
+    border-radius: 4px;
+    transition: background-color 0.3s linear; }
+  .site-footer .scroll-to-top:hover {
+    background: rgba(255, 126, 32, 0.8); }
 
 .site-info {
   background: #242424; }

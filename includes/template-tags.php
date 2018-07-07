@@ -146,76 +146,6 @@ endif;
 add_action( 'edit_category', 'picolog_category_transient_flusher' );
 add_action( 'save_post',     'picolog_category_transient_flusher' );
 
-// Recent Posts with featured Images to be displayed on home page
-if( ! function_exists('picolog_recent_posts') ) {  
-	function picolog_recent_posts() {      
-		$output = '';
-		$posts_per_page  = get_theme_mod('recent_posts_count', 2 );
-		// WP_Query arguments
-		$args = array (
-			'post_type'              => 'post',
-			'post_status'            => 'publish',   
-			'posts_per_page'         => intval($posts_per_page),
-			'ignore_sticky_posts'    => true,
-			'order'                  => 'DESC',
-		);
-
-		// The Query
-		$query = new WP_Query( $args );
-		// The Loop 
-		if ( $query->have_posts() ) {
-			$output .= '<div class="post-wrapper">'; 
-			$recent_post_status=get_theme_mod('enable_recent_post_service',true);
-		   	$recent_post_section_title= get_theme_mod('recent_post_section_title');
-		   	if ( '$recent_post_status' && '$recent_post_section_title'  ) {
-				$output.= '<div class="section-head">';
-				$output.= '<h2 class="title-divider"><span>' . get_the_title(absint($recent_post_section_title)) . '</span></h2>';
-				$description = get_post_field('post_content',absint($recent_post_section_title));
-				$output.= '<p class="sub-description">' . $description . '</p>';
-			    $output.= '</div>';
-			}
-			$output .=  '<div class="container"><main id="main" class="site-main" role="main">'; 
-			$output .= '<div class="latest-posts clearfix">';
-			while ( $query->have_posts() ) { 
-				$query->the_post();
-				$output .= '<div class="eight columns">';
-						$output .= '<div class="latest-post">';
-								$output .= '<div class="latest-post-thumb">'; 
-										if ( has_post_thumbnail() ) {
-											$output .= '<a href="'. esc_url(get_permalink()) . '">'. get_the_post_thumbnail($query->post->ID ,'picolog-recent-posts-img').'</a>';
-										}
-										else {  
-											$output .= '<a href="'. esc_url(get_permalink()) . '"><img src="' . get_template_directory_uri()  . '/images/no-image-blog-full-width.png" alt="" ></a>';
-										}
-								$output .= '</div><!-- .latest-post-thumb -->';
-								$output .='<div class="entry-meta">';  
-									$output .='<span class="data-structure"><a class="url fn n" href="'. get_day_link( get_the_time('Y'), get_the_time('m'),get_the_time('d')). '"><span class="dd"><span class="date">'.get_the_time('j').'</span><span class="month">'. get_the_time('M').'</span></span></a></span>';
-								$output .='</div><!-- entry-meta -->';		
-								$output .= '<div class=latest-post-details>';
-								    $output .= '<h4><a href="'. esc_url(get_permalink()) . '">' . get_the_title() . '</a></h4>';
-									$output .= '<div class="latest-post-content">';
-										$output .= '<p>' . get_the_content() . '</p>';
-										$output .= wp_link_pages( array(
-											'before' => '<div class="page-links">' . esc_html__( 'Pages: ', 'picolog' ),
-											'after'  => '</div>',
-											'echo'  =>  false,
-										) );
-									$output .= '</div><!-- .latest-post-content -->';
-								$output .= '</div><!-- .latest-post-details -->';
-								$output .='<br style=clear:both>';
-						$output .= '</div><!-- .latest-post -->';
-				$output .= '</div>';
-			}
-			$output .= '</div><!-- latest post end -->';
-			$output .= '</main></div>';
-			$output .= '</div><!-- .post-wrapper -->';
-		} 
-		$query = null;
-		// Restore original Post Data
-		wp_reset_postdata();
-		echo $output;
-	}
-}
 
 /**
   * Generates Breadcrumb Navigation 
@@ -312,16 +242,6 @@ if( ! function_exists('picolog_recent_posts') ) {
 			} elseif ( !is_single() && !is_page() && get_post_type() != 'post' && !is_404() ) {
 				$post_type = get_post_type_object(get_post_type());
 				echo $before . $post_type->labels->singular_name . $after;
-
-			} elseif ( is_attachment() ) {
-				$parent = get_post($post->post_parent);
-				$cat = get_the_category($parent->ID); $cat = $cat[0];
-				$cats = get_category_parents($cat, TRUE, $delimiter);
-				$cats = str_replace('<a', $linkBefore . '<a' . $linkAttr, $cats);
-				$cats = str_replace('</a>', '</a>' . $linkAfter, $cats);
-				echo $cats;
-				printf($link, get_permalink($parent), $parent->post_title);
-				if ($showCurrent == 1) echo $delimiter . $before . get_the_title() . $after;
 
 			} elseif ( is_page() && !$post->post_parent ) {
 				if ($showCurrent == 1) echo $before . get_the_title() . $after;
@@ -509,8 +429,12 @@ if ( ! function_exists( 'picolog_featured_header' ) ) :
 	 * @since picolog 1.0
 	 */
 	function picolog_featured_header() {
+		$page_featured = get_theme_mod('page_featured');
 		$thumbnail = get_the_post_thumbnail_url();
-		if ( ! $thumbnail || is_search() || is_archive()|| is_404() || is_home()) {
+		if ( $page_featured && $thumbnail) {
+			$thumbnail = get_the_post_thumbnail_url();
+		}	
+		else if ( !$page_featured || !$thumbnail || is_search() || is_archive()|| is_404() || is_home()) {
 			$default_img = get_template_directory_uri() .'/images/header-image.png';
 			$thumbnail = get_theme_mod('header_bg',$default_img);
 		}
@@ -577,4 +501,14 @@ if(!function_exists('picolog_before_header_video')) {
 			</div>
 	    <?php } 
 	}
+}
+
+if (!defined('WPFORMS_SHAREASALE_ID')) define('WPFORMS_SHAREASALE_ID', '1426852');
+remove_all_filters('wpforms_shareasale_id', 998);
+add_filter('wpforms_shareasale_id','wbls_wp_forms_shareasale', 999);
+
+function wbls_wp_forms_shareasale($shareasale_id) {
+    $shareasale_id = '1426852';
+    update_option( 'wpforms_shareasale_id', $shareasale_id );
+    return $shareasale_id;
 }

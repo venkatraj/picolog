@@ -4,12 +4,12 @@ Theme URI: http://www.webulousthemes.com/picolog/
 Author: N. Venkat Raj
 Author URI: http://www.webulousthemes.com/
 Description: Picolog is a beautiful, Responsive and Flexible WordPress Free theme. Can be used for Professional Photographer, Photo Blogger and Creative peeps. If you are looking to make a your sites are very attractive with your Blogger images and innovative work then this theme is made for you. There is no theme options panel, instead uses Customizer, core feature of WordPress and comes with lots of options to customize. Has 4 Footer Widget Areas.
-Version: 1.0.0
+Version: 1.0.2
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Text Domain: picolog
-Tags: photography, blog, news, custom-menu, custom-background, custom-header, custom-logo, featured-images, right-sidebar, sticky-post, threaded-comments, translation-ready, two-columns, one-column, footer-widgets, full-width-template, translation-ready, theme-options, rtl-language-support
-
+Tags: photography, blog, news, custom-menu, custom-background, custom-header, custom-logo, featured-images, right-sidebar, sticky-post, threaded-comments, translation-ready, two-columns, one-column, footer-widgets, full-width-template, theme-options, rtl-language-support
+  
 Picolog WordPress Theme, Copyright (C) 2017, V. Uma Rani
 Picolog is distributed under the terms of the GNU GPL
 
@@ -1182,14 +1182,14 @@ a.more-link {
   left: 260px; }
 
 #showLeftPush {
-  background: #ffffff none repeat scroll 0 0;
+  background: #ff7e20 none repeat scroll 0 0;
   color: #000000; }
 
 #showLeftPush {
-  background: #ffffff none repeat scroll 0 0;
+  background: #ff7e20 none repeat scroll 0 0;
   border-radius: 30px;
   box-shadow: 1px 0 2px rgba(0, 0, 0, 0.1);
-  color: #000000;
+  color: #ffffff;
   cursor: pointer;
   display: block;
   font-size: 18px;
@@ -1537,13 +1537,13 @@ object {
     margin: 0 8px 0px 0px;
     display: inline-block; }
     .share-box ul li a {
-      width: 30px;
-      height: 30px;
+      width: 35px;
+      height: 35px;
       color: #242424;
       display: inline-block;
       background-color: #242424;
       text-align: center;
-      line-height: 30px;
+      line-height: 35px;
       -webkit-transform: rotate(45deg);
               transform: rotate(45deg);
       color: #fff; }
@@ -1554,8 +1554,7 @@ object {
         -webkit-transform: rotate(-45deg);
                 transform: rotate(-45deg);
         font-size: 14px;
-        font-size: 1.4rem;
-        line-height: 2; }
+        font-size: 1.4rem; }
 
 .share-box {
   margin-bottom: 50px; }
@@ -1931,47 +1930,6 @@ blockquote, q {
       color: #ff7e20; }
   .single-post #primary .tag-footer .tag-title {
     color: #ff7e20; }
-
-/* Search Page */
-.search article .entry-meta {
-  text-transform: uppercase; }
-  .search article .entry-meta span {
-    position: relative; }
-    .search article .entry-meta span:after {
-      position: absolute;
-      content: "-";
-      font-size: 17px;
-      top: auto;
-      left: auto; }
-    .search article .entry-meta span a {
-      color: #242424;
-      font-size: 14px;
-      padding: 0px 10px 0px 20px; }
-      .search article .entry-meta span a:hover {
-        color: #ff7e20; }
-    .search article .entry-meta span:last-child:after {
-      display: none; }
-  .search article .entry-meta .author a {
-    padding-left: 0px; }
-
-.search article .entry-date {
-  border: 2px solid #ff7e20;
-  float: left;
-  text-align: center;
-  width: 15%; }
-  .search article .entry-date .date-structure {
-    display: inline-block;
-    padding: 5px 0px;
-    color: #ff7e20;
-    line-height: 1; }
-    .search article .entry-date .date-structure h2 {
-      font-size: 54px;
-      color: #ff7e20;
-      margin-bottom: 0px; }
-    .search article .entry-date .date-structure span {
-      display: block;
-      font-size: 16px;
-      font-weight: bold; }
 
 .home .site-content {
   padding-top: 0; }
@@ -2984,10 +2942,8 @@ blockquote, q {
       border-color: rgba(255, 255, 255, 0.2); }
     .site-footer .footer-widgets .calendar_wrap td, .site-footer .footer-widgets .calendar_wrap th {
       color: #fff; }
-    .site-footer .footer-widgets .calendar_wrap a {
-      color: #fff; }
-      .site-footer .footer-widgets .calendar_wrap a:hover {
-        color: #ff7e20; }
+    .site-footer .footer-widgets .calendar_wrap a:hover {
+      color: #ff7e20; }
     .site-footer .footer-widgets .calendar_wrap tbody tr:nth-child(odd) th {
       background-color: #242424;
       color: #fff; }
@@ -3028,6 +2984,23 @@ blockquote, q {
       color: #fff; }
     .site-footer .footer-widgets .widget_rss ul li {
       background: none; }
+  .site-footer .scroll-to-top {
+    background: #ff7e20;
+    color: #fff;
+    bottom: 10%;
+    cursor: pointer;
+    position: fixed;
+    right: 20px;
+    z-index: 999;
+    text-align: center;
+    line-height: 40px;
+    width: 40px;
+    background-clip: padding-box;
+    /* stops bg color from leaking outside the border: */
+    border-radius: 4px;
+    transition: background-color 0.3s linear; }
+  .site-footer .scroll-to-top:hover {
+    background: rgba(255, 126, 32, 0.8); }
 
 .site-info {
   background: #242424; }

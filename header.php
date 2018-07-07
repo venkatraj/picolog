@@ -19,31 +19,14 @@ if ( is_singular() && pings_open() ) { ?>
 </head>
   
 <body <?php body_class(); ?>>  
- <?php $header_bg_size = get_theme_mod('header_bg_size');
- $header_bg_repeat = get_theme_mod('header_bg_repeat');
- $header_bg_position = get_theme_mod('header_bg_position');
- $header_bg_attachment = get_theme_mod('header_bg_attachment'); ?>
+ <?php $header_bg_size = get_theme_mod('header_bg_size','cover');
+ $header_bg_repeat = get_theme_mod('header_bg_repeat','repeat');
+ $header_bg_position = get_theme_mod('header_bg_position','center center'); 
+ $header_bg_attachment = get_theme_mod('header_bg_attachment','fixed'); ?>
 <div id="page" class="hfeed site">
 	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'picolog' ); ?></a>
 	<?php do_action('picolog_before_header'); ?>
 	<header id="masthead" class="site-header" role="banner">   
-			<?php if( is_active_sidebar( 'top-left' )  || is_active_sidebar( 'top-right' ) ): ?>
-				<div class="top-nav">
-					<div class="container">		
-						<div class="eight columns">
-							<div class="cart-left">
-								<?php dynamic_sidebar('top-left' ); ?>
-							</div>
-						</div>
-				
-						<div class="eight columns">
-							<div class="cart-right">
-								<?php dynamic_sidebar('top-right' ); ?>  
-							</div>
-						</div>
-					</div>
-				</div> <!-- .top-nav --> 
-			<?php endif;?>
 		<?php if( is_front_page() && 'posts' != get_option('show_on_front') ){ ?>
 			<div class="branding header-image">
 				<div class="nav-wrap">
@@ -77,7 +60,7 @@ if ( is_singular() && pings_open() ) { ?>
 			<div class="menu-push">
 				<a id="showLeftPush" class="fa fa-times fa-bars"></a>
 				<nav id="site-navigation" class="nav-menu-slide menu-vertical menu-left clearfix" role="navigation">
-					<h3 id = "hideLeftPush"> Menu <i class="fa fa-arrow-right"></i></h3>
+					<h3 id = "hideLeftPush"> <?php echo apply_filters('picolog_responsive_menu_title', __('Menu','picolog') ); ?> <i class="fa fa-arrow-right"></i></h3>
 					<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
 				</nav>
 				
@@ -130,7 +113,3 @@ if ( is_singular() && pings_open() ) { ?>
 			</div>
 	<?php } 
 	endif; ?>
-
-	
-
-

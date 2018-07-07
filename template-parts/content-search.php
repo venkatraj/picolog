@@ -9,31 +9,24 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-<header class="entry-header">
-		<?php the_title( sprintf( '<h1 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h1>' ); ?>
-	<div class="title-meta"> 
-		<?php if ( 'post' == get_post_type() ) : ?>
-			<div class="entry-date"> 
-				<span class="date-structure">
-					<h2 class="dd"><?php echo get_the_time('j');?></h2>
-					<span class="month"><?php echo get_the_time('M');?></span>
-					<span class="year"><?php echo get_the_time('Y');?></span>
-				</span>
-			</div><!-- .entry-meta -->
+<div class="latest-content">
+	<header class="header-content">
+		<div class="title-meta">
+			<?php the_title( sprintf( '<h1 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h1>' ); ?>
+			<?php if ( 'post' == get_post_type() ) : ?>
 				<?php picolog_top_meta();?>
-			
 			<?php endif; ?>
-	</div>
+		</div>
 		<br class="clear">
-</header><!-- .entry-header -->
-
-	<div class="entry-summary">    
-		<?php the_excerpt(); ?>
-	</div><!-- .entry-summary -->
-<?php if ( 'post' == get_post_type() ): ?>
-	<footer class="entry-footer">     
-		<?php picolog_entry_footer(); ?>   
-	</footer><!-- .entry-footer -->
-<?php endif;?>
-
+	
+		<div class="entry-summary">    
+			<?php the_excerpt(); ?>
+		</div><!-- .entry-summary -->
+		<?php if ( 'post' == get_post_type() ): ?>
+			<footer class="entry-footer">     
+				<?php picolog_entry_footer(); ?>   
+			</footer><!-- .entry-footer -->
+		<?php endif;?>
+	</header><!-- .entry-header -->
+</div>
 </article><!-- #post-## -->

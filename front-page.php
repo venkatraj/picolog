@@ -59,10 +59,12 @@ if ( 'posts' == get_option( 'show_on_front' ) ) {
     
 	$gallery_cat = get_theme_mod( 'gallery_cat');
 	$masonry_layout = get_theme_mod( 'masonry_columns', 'three' );
+	$gallery_count  = get_theme_mod('gallery_count', 9 ); 
 	$paged = ( get_query_var('page') ) ? get_query_var('page') : 1;
 	$client_posts = array(   
-		'post_type' => 'post',
-    	'paged' => $paged,              
+		'post_type'       => 'post',
+		'paged'           => $paged,      
+		'posts_per_page'  => intval($gallery_count),        
 	);
 
 	if( $gallery_cat ) {
